@@ -12,8 +12,9 @@ class ProjectsController extends Controller
         // 数据验证
         $attributes = request()->validate([
             'title' => 'required',
-            'description' => 'required'
+            'description' => 'required',
         ]);
+        $attributes['owner_id'] = auth()->id();
         // 存储到数据库中
         Project::create($attributes);
         // 创建成功后进行重定向
