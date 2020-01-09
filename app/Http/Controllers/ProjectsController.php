@@ -14,9 +14,8 @@ class ProjectsController extends Controller
             'title' => 'required',
             'description' => 'required',
         ]);
-        $attributes['owner_id'] = auth()->id();
         // 存储到数据库中
-        Project::create($attributes);
+        auth()->user()->projects()->create($attributes);
         // 创建成功后进行重定向
         return redirect('/projects');
     }
