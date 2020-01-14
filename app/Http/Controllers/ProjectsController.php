@@ -34,8 +34,8 @@ class ProjectsController extends Controller
             'description' => 'required',
         ]);
         // 存储到数据库中
-        auth()->user()->projects()->create($attributes);
+        $project = auth()->user()->projects()->create($attributes);
         // 创建成功后进行重定向
-        return redirect('/projects');
+        return redirect($project->path());
     }
 }
