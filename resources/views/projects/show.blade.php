@@ -16,10 +16,9 @@
                 <h3 class="text-lg text-grey tracking-wide mb-3">Tasks</h3>
 
                 {{-- Tasks --}}
-                <div class="card mb-4">Lorem ipsum.</div>
-                <div class="card mb-4">Lorem ipsum.</div>
-                <div class="card mb-4">Lorem ipsum.</div>
-                <div class="card mb-4">Lorem ipsum.</div>
+                @foreach ($project->tasks as $task)
+                <div class="card mb-4">{{ $task->body }}</div>
+                @endforeach
             </div>
             <div>
                 <h3 class="text-lg text-grey tracking-wide mb-3">General Notes</h3>
