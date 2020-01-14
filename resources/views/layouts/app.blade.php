@@ -15,7 +15,6 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -26,7 +25,7 @@
         <nav class="bg-white">
             <div class="container mx-auto">
                 <div class="flex justify-between items-center py-2">
-                    <a class="text-2xl font-medium tracking-wider" href="{{ url('/') }}">
+                    <a class="text-2xl font-medium tracking-wider" href="{{ url('/projects') }}">
                         {{ config('app.name') }}
                     </a>
 
