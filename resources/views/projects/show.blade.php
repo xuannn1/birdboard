@@ -6,7 +6,8 @@
         <h3 class="text-grey tracking-wide">
             <a href="/projects">My Projects</a> / {{ $project->title }}
         </h3>
-        <a href="/projects/create" class="btn-blue">New Project</a>
+        <a href="{{ $project->path() . '/edit' }}"
+           class="btn-blue">Edit Project</a>
     </div>
 </header>
 <main>
@@ -18,34 +19,46 @@
                 {{-- Tasks --}}
                 @foreach ($project->tasks as $task)
                 <div class="card mb-4">
-                    <form action="{{ $task->path() }}" method="POST">
+                    <form action="{{ $task->path() }}"
+                          method="POST">
                         @method('PATCH')
                         @csrf
                         <div class="flex">
-                            <input type="text" name="body" value="{{ $task->body }}"
-                                class="w-full {{$task->completed ? 'text-gray-500' : ''}}">
-                            <input name="completed" type="checkbox" onchange="this.form.submit()"
-                                {{ $task->completed ? 'checked' : '' }}>
+                            <input type="text"
+                                   name="body"
+                                   value="{{ $task->body }}"
+                                   class="w-full {{$task->completed ? 'text-gray-500' : ''}}">
+                            <input name="completed"
+                                   type="checkbox"
+                                   onchange="this.form.submit()"
+                                   {{ $task->completed ? 'checked' : '' }}>
                         </div>
                     </form>
                 </div>
                 @endforeach
                 <div class="card mb-4">
-                    <form action="{{ $project->path() . '/tasks' }}" method="POST">
+                    <form action="{{ $project->path() . '/tasks' }}"
+                          method="POST">
                         @csrf
-                        <input placeholder="Begin adding tasks..." class="w-full" name="body">
+                        <input placeholder="Begin adding tasks..."
+                               class="w-full"
+                               name="body">
                     </form>
                 </div>
             </div>
             <div>
                 <h3 class="text-lg text-grey tracking-wide mb-3">General Notes</h3>
 
-                <form action="{{ $project->path() }}" method="POST">
+                <form action="{{ $project->path() }}"
+                      method="POST">
                     @csrf
                     @method('PATCH')
-                    <textarea name="notes" class="card w-full mb-4" style="min-height: 200px;"
-                        placeholder="anything special that you want to make a note of?">{{ $project->notes }}</textarea>
-                    <button type="submit" class="btn-blue">Save</button>
+                    <textarea name="notes"
+                              class="card w-full mb-4"
+                              style="min-height: 200px;"
+                              placeholder="anything special that you want to make a note of?">{{ $project->notes }}</textarea>
+                    <button type="submit"
+                            class="btn-blue">Save</button>
                 </form>
             </div>
         </div>
