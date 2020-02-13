@@ -47,7 +47,6 @@
                 </div>
             </div>
             <div>
-                <h3 class="text-lg text-grey tracking-wide mb-3">General Notes</h3>
 
                 <form action="{{ $project->path() }}"
                       method="POST">
