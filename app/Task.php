@@ -15,20 +15,6 @@ class Task extends Model
     // 当task被更新时，它对应当project也会随之更新
     protected $touches = ['project'];
 
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::created(function ($task) {
-            $task->project->recordActivity('created_task');
-        });
-
-        static::updated(function ($task) {
-            if (!$task->completed) return;
-
-            $task->project->recordActivity('completed_task');
-        });
-    }
 
     public function project()
     {
@@ -43,10 +29,12 @@ class Task extends Model
     public function complete()
     {
         $this->update(['completed' => true]);
+        $this->project->recordActivity('completed_task');
     }
 
     public function incomplete()
     {
         $this->update(['completed' => false]);
+        $this->project->recordActivity('incompleted_task');
     }
 }
