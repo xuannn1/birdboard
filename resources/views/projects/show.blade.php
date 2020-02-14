@@ -68,8 +68,10 @@
                 @endif
             </div>
         </div>
-        <div class="lg:w-1/4 px-3">
+        <div class="lg:w-1/4 px-3 pt-10">
             @include('projects.card')
+
+            @include('projects.activity.card')
         </div>
     </div>
 </main>

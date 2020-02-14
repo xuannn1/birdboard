@@ -10,7 +10,6 @@
     <meta name="csrf-token"
           content="{{ csrf_token() }}">
 
-hello there is
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
