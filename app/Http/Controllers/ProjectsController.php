@@ -10,7 +10,7 @@ class ProjectsController extends Controller
     public function index()
     {
         // 获取所有的project，将最近更新的放前面
-        $projects = auth()->user()->projects;
+        $projects = auth()->user()->accessibleProjects();
         return view('projects.index', compact(['projects']));
     }
 
