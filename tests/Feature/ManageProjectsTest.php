@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Project;
+use App\User;
 use Facades\Tests\Setup\ProjectFactory;
 
 class ManageProjectsTest extends TestCase
@@ -32,15 +33,11 @@ class ManageProjectsTest extends TestCase
     /** @test */
     public function a_user_can_create_a_project()
     {
-        $this->signIn();
+        $user = $this->signIn();
 
         $this->get('/projects/create')->assertStatus(200);
 
-        $attributes = [
-            'title' => $this->faker->sentence,
-            'description' => $this->faker->text,
-            'notes' => 'general notes'
-        ];
+        $attributes = factory(Project::class)->raw(['owner_id' => $user->id]);
 
         $response = $this->post('/projects', $attributes);
         $project = Project::where($attributes)->first();
@@ -60,11 +57,17 @@ class ManageProjectsTest extends TestCase
     {
         $project = ProjectFactory::create();
 
+        // 未登陆用户不能删除project
         $this->delete($project->path())
             ->assertRedirect('/login');
 
-        $this->signIn();
+        // 不是project的创建者不能删除project
+        $user = $this->signIn();
         $this->delete($project->path())->assertStatus(403);
+
+        // 即使是被邀请进这个project的用户也不行
+        $project->invite($user);
+        $this->actingAs($user)->delete($project->path())->assertStatus(403);
     }
 
     /** @test */

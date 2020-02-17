@@ -6,6 +6,7 @@
 
     <div class="text-grey mb-6 flex-1">{{ \Str::limit($project->description, 300) }}</div>
 
+    @can('manage', $project)
     <footer>
         <form method="POST"
               action="{{ $project->path() }}"
@@ -15,4 +16,5 @@
             <button type="submit">Delete</button>
         </form>
     </footer>
+    @endcan
 </div>
