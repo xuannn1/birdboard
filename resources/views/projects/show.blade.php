@@ -6,8 +6,21 @@
         <h3 class="text-grey tracking-wide">
             <a href="/projects">My Projects</a> / {{ $project->title }}
         </h3>
-        <a href="{{ $project->path() . '/edit' }}"
-           class="btn-blue">Edit Project</a>
+
+        <div>
+            @foreach ($project->members as $member)
+            <img src="{{ gravatar_url($member->email) }}"
+                 alt="{{ $member->name }}'s avatar'"
+                 class="inline rounded-full w-10 mr-2">
+            @endforeach
+
+            <img src="{{ gravatar_url($project->owner->email) }}"
+                 alt="{{ $project->owner->name }}'s avatar'"
+                 class="inline rounded-full w-10 mr-2">
+
+            <a href="{{ $project->path() . '/edit' }}"
+               class="btn-blue ml-6">Edit Project</a>
+        </div>
     </div>
 </header>
 <main>
