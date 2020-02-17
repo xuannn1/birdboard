@@ -14,7 +14,7 @@
 }
 
 .card {
-    @apply .bg-white .p-5 .rounded-lg .shadow;
+    @apply .bg-white .p-5 .rounded-lg .shadow .flex .flex-col;
 }
 
 @tailwind utilities;

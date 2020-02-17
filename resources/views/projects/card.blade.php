@@ -4,7 +4,7 @@
         <a href="{{ $project->path() }}">{{ $project->title }}</a>
     </h3>
 
-    <div class="text-grey mb-6">{{ \Str::limit($project->description, 300) }}</div>
+    <div class="text-grey mb-6 flex-1">{{ \Str::limit($project->description, 300) }}</div>
 
     <footer>
         <form method="POST"
