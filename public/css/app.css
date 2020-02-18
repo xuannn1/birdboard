@@ -7,7 +7,7 @@
   --text-accent-color:#47cdff;
   --text-accent-light-color:#8ae2fe;
   --text-muted-color: rgba(0,0,0,0.3);
-  --text-muted-light-color: rgba(255,255,255,0.1);
+  --text-muted-light-color: rgba(0,0,0,0.1);
 }
 
 .theme-dark {
@@ -664,6 +664,20 @@ video {
   box-shadow: 0 2px 7px 0 #b0eaff;
 }
 
+.btn-white {
+  background-color: var(--card-background-color);
+  border-width: 1px;
+  border-color: var(--text-accent-color);
+  color: var(--text-accent-color);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  box-shadow: 0 2px 7px 0 #b0eaff;
+}
+
 .card {
   background-color: var(--card-background-color);
   padding: 1.25rem;
@@ -894,7 +908,7 @@ button {
   border-color: rgba(0,0,0,0.2);
 }
 
-.border-red-500 {
+.border-red {
   border-color: #f56565;
 }
 
@@ -930,7 +944,7 @@ button {
   border-color: rgba(0,0,0,0.2);
 }
 
-.hover\:border-red-500:hover {
+.hover\:border-red:hover {
   border-color: #f56565;
 }
 
@@ -966,7 +980,7 @@ button {
   border-color: rgba(0,0,0,0.2);
 }
 
-.focus\:border-red-500:focus {
+.focus\:border-red:focus {
   border-color: #f56565;
 }
 
@@ -3936,23 +3950,23 @@ button {
   color: rgba(0,0,0,0.2);
 }
 
-.placeholder-red-500::-webkit-input-placeholder {
+.placeholder-red::-webkit-input-placeholder {
   color: #f56565;
 }
 
-.placeholder-red-500::-moz-placeholder {
+.placeholder-red::-moz-placeholder {
   color: #f56565;
 }
 
-.placeholder-red-500:-ms-input-placeholder {
+.placeholder-red:-ms-input-placeholder {
   color: #f56565;
 }
 
-.placeholder-red-500::-ms-input-placeholder {
+.placeholder-red::-ms-input-placeholder {
   color: #f56565;
 }
 
-.placeholder-red-500::placeholder {
+.placeholder-red::placeholder {
   color: #f56565;
 }
 
@@ -4136,23 +4150,23 @@ button {
   color: rgba(0,0,0,0.2);
 }
 
-.focus\:placeholder-red-500:focus::-webkit-input-placeholder {
+.focus\:placeholder-red:focus::-webkit-input-placeholder {
   color: #f56565;
 }
 
-.focus\:placeholder-red-500:focus::-moz-placeholder {
+.focus\:placeholder-red:focus::-moz-placeholder {
   color: #f56565;
 }
 
-.focus\:placeholder-red-500:focus:-ms-input-placeholder {
+.focus\:placeholder-red:focus:-ms-input-placeholder {
   color: #f56565;
 }
 
-.focus\:placeholder-red-500:focus::-ms-input-placeholder {
+.focus\:placeholder-red:focus::-ms-input-placeholder {
   color: #f56565;
 }
 
-.focus\:placeholder-red-500:focus::placeholder {
+.focus\:placeholder-red:focus::placeholder {
   color: #f56565;
 }
 
@@ -4511,7 +4525,7 @@ button {
   color: rgba(0,0,0,0.2);
 }
 
-.text-red-500 {
+.text-red {
   color: #f56565;
 }
 
@@ -4551,7 +4565,7 @@ button {
   color: rgba(0,0,0,0.2);
 }
 
-.hover\:text-red-500:hover {
+.hover\:text-red:hover {
   color: #f56565;
 }
 
@@ -4591,7 +4605,7 @@ button {
   color: rgba(0,0,0,0.2);
 }
 
-.focus\:text-red-500:focus {
+.focus\:text-red:focus {
   color: #f56565;
 }
 
@@ -5277,7 +5291,7 @@ button {
     border-color: rgba(0,0,0,0.2);
   }
 
-  .sm\:border-red-500 {
+  .sm\:border-red {
     border-color: #f56565;
   }
 
@@ -5313,7 +5327,7 @@ button {
     border-color: rgba(0,0,0,0.2);
   }
 
-  .sm\:hover\:border-red-500:hover {
+  .sm\:hover\:border-red:hover {
     border-color: #f56565;
   }
 
@@ -5349,7 +5363,7 @@ button {
     border-color: rgba(0,0,0,0.2);
   }
 
-  .sm\:focus\:border-red-500:focus {
+  .sm\:focus\:border-red:focus {
     border-color: #f56565;
   }
 
@@ -8319,23 +8333,23 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .sm\:placeholder-red-500::-webkit-input-placeholder {
+  .sm\:placeholder-red::-webkit-input-placeholder {
     color: #f56565;
   }
 
-  .sm\:placeholder-red-500::-moz-placeholder {
+  .sm\:placeholder-red::-moz-placeholder {
     color: #f56565;
   }
 
-  .sm\:placeholder-red-500:-ms-input-placeholder {
+  .sm\:placeholder-red:-ms-input-placeholder {
     color: #f56565;
   }
 
-  .sm\:placeholder-red-500::-ms-input-placeholder {
+  .sm\:placeholder-red::-ms-input-placeholder {
     color: #f56565;
   }
 
-  .sm\:placeholder-red-500::placeholder {
+  .sm\:placeholder-red::placeholder {
     color: #f56565;
   }
 
@@ -8519,23 +8533,23 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .sm\:focus\:placeholder-red-500:focus::-webkit-input-placeholder {
+  .sm\:focus\:placeholder-red:focus::-webkit-input-placeholder {
     color: #f56565;
   }
 
-  .sm\:focus\:placeholder-red-500:focus::-moz-placeholder {
+  .sm\:focus\:placeholder-red:focus::-moz-placeholder {
     color: #f56565;
   }
 
-  .sm\:focus\:placeholder-red-500:focus:-ms-input-placeholder {
+  .sm\:focus\:placeholder-red:focus:-ms-input-placeholder {
     color: #f56565;
   }
 
-  .sm\:focus\:placeholder-red-500:focus::-ms-input-placeholder {
+  .sm\:focus\:placeholder-red:focus::-ms-input-placeholder {
     color: #f56565;
   }
 
-  .sm\:focus\:placeholder-red-500:focus::placeholder {
+  .sm\:focus\:placeholder-red:focus::placeholder {
     color: #f56565;
   }
 
@@ -8894,7 +8908,7 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .sm\:text-red-500 {
+  .sm\:text-red {
     color: #f56565;
   }
 
@@ -8934,7 +8948,7 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .sm\:hover\:text-red-500:hover {
+  .sm\:hover\:text-red:hover {
     color: #f56565;
   }
 
@@ -8974,7 +8988,7 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .sm\:focus\:text-red-500:focus {
+  .sm\:focus\:text-red:focus {
     color: #f56565;
   }
 
@@ -9661,7 +9675,7 @@ button {
     border-color: rgba(0,0,0,0.2);
   }
 
-  .md\:border-red-500 {
+  .md\:border-red {
     border-color: #f56565;
   }
 
@@ -9697,7 +9711,7 @@ button {
     border-color: rgba(0,0,0,0.2);
   }
 
-  .md\:hover\:border-red-500:hover {
+  .md\:hover\:border-red:hover {
     border-color: #f56565;
   }
 
@@ -9733,7 +9747,7 @@ button {
     border-color: rgba(0,0,0,0.2);
   }
 
-  .md\:focus\:border-red-500:focus {
+  .md\:focus\:border-red:focus {
     border-color: #f56565;
   }
 
@@ -12703,23 +12717,23 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .md\:placeholder-red-500::-webkit-input-placeholder {
+  .md\:placeholder-red::-webkit-input-placeholder {
     color: #f56565;
   }
 
-  .md\:placeholder-red-500::-moz-placeholder {
+  .md\:placeholder-red::-moz-placeholder {
     color: #f56565;
   }
 
-  .md\:placeholder-red-500:-ms-input-placeholder {
+  .md\:placeholder-red:-ms-input-placeholder {
     color: #f56565;
   }
 
-  .md\:placeholder-red-500::-ms-input-placeholder {
+  .md\:placeholder-red::-ms-input-placeholder {
     color: #f56565;
   }
 
-  .md\:placeholder-red-500::placeholder {
+  .md\:placeholder-red::placeholder {
     color: #f56565;
   }
 
@@ -12903,23 +12917,23 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .md\:focus\:placeholder-red-500:focus::-webkit-input-placeholder {
+  .md\:focus\:placeholder-red:focus::-webkit-input-placeholder {
     color: #f56565;
   }
 
-  .md\:focus\:placeholder-red-500:focus::-moz-placeholder {
+  .md\:focus\:placeholder-red:focus::-moz-placeholder {
     color: #f56565;
   }
 
-  .md\:focus\:placeholder-red-500:focus:-ms-input-placeholder {
+  .md\:focus\:placeholder-red:focus:-ms-input-placeholder {
     color: #f56565;
   }
 
-  .md\:focus\:placeholder-red-500:focus::-ms-input-placeholder {
+  .md\:focus\:placeholder-red:focus::-ms-input-placeholder {
     color: #f56565;
   }
 
-  .md\:focus\:placeholder-red-500:focus::placeholder {
+  .md\:focus\:placeholder-red:focus::placeholder {
     color: #f56565;
   }
 
@@ -13278,7 +13292,7 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .md\:text-red-500 {
+  .md\:text-red {
     color: #f56565;
   }
 
@@ -13318,7 +13332,7 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .md\:hover\:text-red-500:hover {
+  .md\:hover\:text-red:hover {
     color: #f56565;
   }
 
@@ -13358,7 +13372,7 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .md\:focus\:text-red-500:focus {
+  .md\:focus\:text-red:focus {
     color: #f56565;
   }
 
@@ -14045,7 +14059,7 @@ button {
     border-color: rgba(0,0,0,0.2);
   }
 
-  .lg\:border-red-500 {
+  .lg\:border-red {
     border-color: #f56565;
   }
 
@@ -14081,7 +14095,7 @@ button {
     border-color: rgba(0,0,0,0.2);
   }
 
-  .lg\:hover\:border-red-500:hover {
+  .lg\:hover\:border-red:hover {
     border-color: #f56565;
   }
 
@@ -14117,7 +14131,7 @@ button {
     border-color: rgba(0,0,0,0.2);
   }
 
-  .lg\:focus\:border-red-500:focus {
+  .lg\:focus\:border-red:focus {
     border-color: #f56565;
   }
 
@@ -17087,23 +17101,23 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .lg\:placeholder-red-500::-webkit-input-placeholder {
+  .lg\:placeholder-red::-webkit-input-placeholder {
     color: #f56565;
   }
 
-  .lg\:placeholder-red-500::-moz-placeholder {
+  .lg\:placeholder-red::-moz-placeholder {
     color: #f56565;
   }
 
-  .lg\:placeholder-red-500:-ms-input-placeholder {
+  .lg\:placeholder-red:-ms-input-placeholder {
     color: #f56565;
   }
 
-  .lg\:placeholder-red-500::-ms-input-placeholder {
+  .lg\:placeholder-red::-ms-input-placeholder {
     color: #f56565;
   }
 
-  .lg\:placeholder-red-500::placeholder {
+  .lg\:placeholder-red::placeholder {
     color: #f56565;
   }
 
@@ -17287,23 +17301,23 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .lg\:focus\:placeholder-red-500:focus::-webkit-input-placeholder {
+  .lg\:focus\:placeholder-red:focus::-webkit-input-placeholder {
     color: #f56565;
   }
 
-  .lg\:focus\:placeholder-red-500:focus::-moz-placeholder {
+  .lg\:focus\:placeholder-red:focus::-moz-placeholder {
     color: #f56565;
   }
 
-  .lg\:focus\:placeholder-red-500:focus:-ms-input-placeholder {
+  .lg\:focus\:placeholder-red:focus:-ms-input-placeholder {
     color: #f56565;
   }
 
-  .lg\:focus\:placeholder-red-500:focus::-ms-input-placeholder {
+  .lg\:focus\:placeholder-red:focus::-ms-input-placeholder {
     color: #f56565;
   }
 
-  .lg\:focus\:placeholder-red-500:focus::placeholder {
+  .lg\:focus\:placeholder-red:focus::placeholder {
     color: #f56565;
   }
 
@@ -17662,7 +17676,7 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .lg\:text-red-500 {
+  .lg\:text-red {
     color: #f56565;
   }
 
@@ -17702,7 +17716,7 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .lg\:hover\:text-red-500:hover {
+  .lg\:hover\:text-red:hover {
     color: #f56565;
   }
 
@@ -17742,7 +17756,7 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .lg\:focus\:text-red-500:focus {
+  .lg\:focus\:text-red:focus {
     color: #f56565;
   }
 
@@ -18429,7 +18443,7 @@ button {
     border-color: rgba(0,0,0,0.2);
   }
 
-  .xl\:border-red-500 {
+  .xl\:border-red {
     border-color: #f56565;
   }
 
@@ -18465,7 +18479,7 @@ button {
     border-color: rgba(0,0,0,0.2);
   }
 
-  .xl\:hover\:border-red-500:hover {
+  .xl\:hover\:border-red:hover {
     border-color: #f56565;
   }
 
@@ -18501,7 +18515,7 @@ button {
     border-color: rgba(0,0,0,0.2);
   }
 
-  .xl\:focus\:border-red-500:focus {
+  .xl\:focus\:border-red:focus {
     border-color: #f56565;
   }
 
@@ -21471,23 +21485,23 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .xl\:placeholder-red-500::-webkit-input-placeholder {
+  .xl\:placeholder-red::-webkit-input-placeholder {
     color: #f56565;
   }
 
-  .xl\:placeholder-red-500::-moz-placeholder {
+  .xl\:placeholder-red::-moz-placeholder {
     color: #f56565;
   }
 
-  .xl\:placeholder-red-500:-ms-input-placeholder {
+  .xl\:placeholder-red:-ms-input-placeholder {
     color: #f56565;
   }
 
-  .xl\:placeholder-red-500::-ms-input-placeholder {
+  .xl\:placeholder-red::-ms-input-placeholder {
     color: #f56565;
   }
 
-  .xl\:placeholder-red-500::placeholder {
+  .xl\:placeholder-red::placeholder {
     color: #f56565;
   }
 
@@ -21671,23 +21685,23 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .xl\:focus\:placeholder-red-500:focus::-webkit-input-placeholder {
+  .xl\:focus\:placeholder-red:focus::-webkit-input-placeholder {
     color: #f56565;
   }
 
-  .xl\:focus\:placeholder-red-500:focus::-moz-placeholder {
+  .xl\:focus\:placeholder-red:focus::-moz-placeholder {
     color: #f56565;
   }
 
-  .xl\:focus\:placeholder-red-500:focus:-ms-input-placeholder {
+  .xl\:focus\:placeholder-red:focus:-ms-input-placeholder {
     color: #f56565;
   }
 
-  .xl\:focus\:placeholder-red-500:focus::-ms-input-placeholder {
+  .xl\:focus\:placeholder-red:focus::-ms-input-placeholder {
     color: #f56565;
   }
 
-  .xl\:focus\:placeholder-red-500:focus::placeholder {
+  .xl\:focus\:placeholder-red:focus::placeholder {
     color: #f56565;
   }
 
@@ -22046,7 +22060,7 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .xl\:text-red-500 {
+  .xl\:text-red {
     color: #f56565;
   }
 
@@ -22086,7 +22100,7 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .xl\:hover\:text-red-500:hover {
+  .xl\:hover\:text-red:hover {
     color: #f56565;
   }
 
@@ -22126,7 +22140,7 @@ button {
     color: rgba(0,0,0,0.2);
   }
 
-  .xl\:focus\:text-red-500:focus {
+  .xl\:focus\:text-red:focus {
     color: #f56565;
   }
 

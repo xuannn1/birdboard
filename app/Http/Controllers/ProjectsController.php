@@ -36,6 +36,11 @@ class ProjectsController extends Controller
         ]);
         // 存储到数据库中
         $project = auth()->user()->projects()->create($attributes);
+
+        if (request()->wantsJson()) {
+            return ['message' => $project->path()];
+        }
+
         // 创建成功后进行重定向
         return redirect($project->path());
     }
