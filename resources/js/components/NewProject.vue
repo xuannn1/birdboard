@@ -11,10 +11,14 @@
               type="text"
               id="title"
               class="border p-2 text-xs block w-full rounded"
-              :class="errors.title ? 'border-red' : 'border-muted-light'"
+              :class="form.errors.title ? 'border-red' : 'border-muted-light'"
               autofocus
             />
-            <span class="text-xs italic text-red" v-if="errors.title" v-text="errors.title[0]"></span>
+            <span
+              class="text-xs italic text-red"
+              v-if="form.errors.title"
+              v-text="form.errors.title[0]"
+            ></span>
           </div>
 
           <div class="mb-4">
@@ -23,13 +27,13 @@
               v-model="form.description"
               id="description"
               class="border p-2 text-xs block w-full rounded"
-              :class="errors.description ? 'border-red' : 'border-muted-light'"
+              :class="form.errors.description ? 'border-red' : 'border-muted-light'"
               rows="7"
             ></textarea>
             <span
               class="text-xs italic text-red"
-              v-if="errors.description"
-              v-text="errors.description[0]"
+              v-if="form.errors.description"
+              v-text="form.errors.description[0]"
             ></span>
           </div>
         </div>
@@ -59,15 +63,15 @@
 </template>
 
 <script>
+import BirdboardForm from "../BirdboardForm";
 export default {
   data() {
     return {
-      form: {
+      form: new BirdboardForm({
         title: "",
         description: "",
         tasks: [{ body: "" }]
-      },
-      errors: {}
+      })
     };
   },
 
@@ -79,17 +83,16 @@ export default {
     cancel() {
       this.$modal.hide("new-project");
       this.form = {};
-      this.errors = {};
     },
 
     async submit() {
-      try {
-        let response = await axios.post("/projects", this.form);
-        // 重定向到详情页
-        location = response.data.message;
-      } catch (error) {
-        this.errors = error.response.data.errors;
+      // task有一个默认值，为了呈现一个input框方便输入
+      // 如果用户没有添加过task，则需要将默认值移除掉
+      if (!this.form.tasks[0].body) {
+        delete this.form.originalData.tasks;
       }
+
+      this.form.submit("/projects").then(res => (location = res.data.message));
     }
   }
 };
