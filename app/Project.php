@@ -27,7 +27,12 @@ class Project extends Model
 
     public function addTask($body)
     {
-        return $task = $this->tasks()->create(compact('body'));
+        return $this->tasks()->create(compact('body'));
+    }
+
+    public function addTasks($tasks)
+    {
+        return $this->tasks()->createMany($tasks);
     }
 
     public function activity()

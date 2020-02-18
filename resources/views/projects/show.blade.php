@@ -40,7 +40,7 @@
                             <input type="text"
                                    name="body"
                                    value="{{ $task->body }}"
-                                   class="bg-card text-default w-full {{$task->completed ? 'text-default' : ''}}">
+                                   class="bg-card w-full {{$task->completed ? 'text-grey line-through' : ''}}">
                             <input name="completed"
                                    type="checkbox"
                                    onchange="this.form.submit()"

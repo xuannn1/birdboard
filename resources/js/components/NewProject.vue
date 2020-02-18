@@ -12,6 +12,7 @@
               id="title"
               class="border p-2 text-xs block w-full rounded"
               :class="errors.title ? 'border-red' : 'border-muted-light'"
+              autofocus
             />
             <span class="text-xs italic text-red" v-if="errors.title" v-text="errors.title[0]"></span>
           </div>
@@ -38,19 +39,19 @@
             <input
               v-for="task in form.tasks"
               :key="task.index"
-              v-model="task.value"
+              v-model="task.body"
               type="text"
               class="border border-muted-light mb-2 p-2 text-xs block w-full rounded"
               placeholder="Task 1"
             />
           </div>
 
-          <button @click="addTask()">Add New Task Field</button>
+          <button type="button" @click="addTask()">Add New Task Field</button>
         </div>
       </div>
 
       <footer class="flex justify-end">
-        <button class="btn-white mr-4" @click="$modal.hide('new-project')">Cancel</button>
+        <button type="button" class="btn-white mr-4" @click="cancel()">Cancel</button>
         <button class="btn-blue">Create Project</button>
       </footer>
     </form>
@@ -64,7 +65,7 @@ export default {
       form: {
         title: "",
         description: "",
-        tasks: [{ value: "" }]
+        tasks: [{ body: "" }]
       },
       errors: {}
     };
@@ -72,7 +73,13 @@ export default {
 
   methods: {
     addTask() {
-      this.form.tasks.push({ value: "" });
+      this.form.tasks.push({ body: "" });
+    },
+
+    cancel() {
+      this.$modal.hide("new-project");
+      this.form = {};
+      this.errors = {};
     },
 
     async submit() {

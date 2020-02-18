@@ -2011,6 +2011,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2018,7 +2019,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         title: "",
         description: "",
         tasks: [{
-          value: ""
+          body: ""
         }]
       },
       errors: {}
@@ -2027,8 +2028,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   methods: {
     addTask: function addTask() {
       this.form.tasks.push({
-        value: ""
+        body: ""
       });
+    },
+    cancel: function cancel() {
+      this.$modal.hide("new-project");
+      this.form = {};
+      this.errors = {};
     },
     submit: function () {
       var _submit = _asyncToGenerator(
@@ -38285,7 +38291,7 @@ var render = function() {
                   ],
                   staticClass: "border p-2 text-xs block w-full rounded",
                   class: _vm.errors.title ? "border-red" : "border-muted-light",
-                  attrs: { type: "text", id: "title" },
+                  attrs: { type: "text", id: "title", autofocus: "" },
                   domProps: { value: _vm.form.title },
                   on: {
                     input: function($event) {
@@ -38366,21 +38372,21 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: task.value,
-                          expression: "task.value"
+                          value: task.body,
+                          expression: "task.body"
                         }
                       ],
                       key: task.index,
                       staticClass:
                         "border border-muted-light mb-2 p-2 text-xs block w-full rounded",
                       attrs: { type: "text", placeholder: "Task 1" },
-                      domProps: { value: task.value },
+                      domProps: { value: task.body },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(task, "value", $event.target.value)
+                          _vm.$set(task, "body", $event.target.value)
                         }
                       }
                     })
@@ -38392,6 +38398,7 @@ var render = function() {
               _c(
                 "button",
                 {
+                  attrs: { type: "button" },
                   on: {
                     click: function($event) {
                       return _vm.addTask()
@@ -38408,9 +38415,10 @@ var render = function() {
               "button",
               {
                 staticClass: "btn-white mr-4",
+                attrs: { type: "button" },
                 on: {
                   click: function($event) {
-                    return _vm.$modal.hide("new-project")
+                    return _vm.cancel()
                   }
                 }
               },

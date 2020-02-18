@@ -35,6 +35,18 @@ class ProjectTest extends TestCase
     }
 
     /** @test */
+    public function it_can_add_multiple_tasks_when_create_a_project()
+    {
+        $project = factory('App\Project')->create();
+
+        $tasks = $project->addTasks([['body' => 'Task 1'], ['body' => 'Task 2']]);
+
+        $this->assertCount(2, $project->tasks);
+        $this->assertTrue($project->tasks->contains($tasks[0]));
+        $this->assertTrue($project->tasks->contains($tasks[1]));
+    }
+
+    /** @test */
     public function it_can_invite_a_user()
     {
         $project = factory('App\Project')->create();

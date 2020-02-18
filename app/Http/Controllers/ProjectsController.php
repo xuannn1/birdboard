@@ -37,6 +37,10 @@ class ProjectsController extends Controller
         // 存储到数据库中
         $project = auth()->user()->projects()->create($attributes);
 
+        if (request()->has('tasks')) {
+            $project->addTasks(request('tasks'));
+        }
+
         if (request()->wantsJson()) {
             return ['message' => $project->path()];
         }
