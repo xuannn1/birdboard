@@ -3,7 +3,7 @@
 @section('content')
 <header class="flex items-center mb-3 py-3">
     <div class="w-full flex justify-between items-center">
-        <h3 class="text-grey tracking-wide">
+        <h3 class="text-default tracking-wide">
             <a href="/projects">My Projects</a> / {{ $project->title }}
         </h3>
 
@@ -27,7 +27,7 @@
     <div class="lg:flex -mx-3">
         <div class="lg:w-3/4 px-3 mb-6">
             <div class="mb-8">
-                <h3 class="text-lg text-grey tracking-wide mb-3">Tasks</h3>
+                <h3 class="text-lg text-default tracking-wide mb-3">Tasks</h3>
 
                 {{-- Tasks --}}
                 @foreach ($project->tasks as $task)
@@ -40,7 +40,7 @@
                             <input type="text"
                                    name="body"
                                    value="{{ $task->body }}"
-                                   class="w-full {{$task->completed ? 'text-gray-500' : ''}}">
+                                   class="bg-card text-default w-full {{$task->completed ? 'text-default' : ''}}">
                             <input name="completed"
                                    type="checkbox"
                                    onchange="this.form.submit()"
@@ -54,12 +54,13 @@
                           method="POST">
                         @csrf
                         <input placeholder="Begin adding tasks..."
-                               class="w-full"
+                               class="bg-card text-default w-full"
                                name="body">
                     </form>
                 </div>
             </div>
             <div>
+                <h3 class="text-lg text-default tracking-wide mb-3">General Notes</h3>
 
                 <form action="{{ $project->path() }}"
                       method="POST">

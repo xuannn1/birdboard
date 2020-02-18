@@ -1,6 +1,6 @@
 <div class="card mt-3"
      style="height:200px;">
-    <h3 class="font-font-normal text-xl mb-4 py-4 -ml-5 border-l-4 border-blue-light pl-4">
+    <h3 class="font-font-normal text-xl mb-4 py-4 -ml-5 border-l-4 border-accent pl-4">
         Invite a User
     </h3>
 
@@ -11,7 +11,7 @@
             <input type="email"
                    name="email"
                    placeholder="Email Address"
-                   class="border border-gray-400 rounded w-full py-2 px-3">
+                   class="border border-grey rounded w-full py-2 px-3">
         </div>
         <button type="submit"
                 class="btn-blue">Invite</button>
