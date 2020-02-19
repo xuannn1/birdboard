@@ -37,7 +37,7 @@
 
                     <div>
                         <!-- Right Side Of Navbar -->
-                        <div class="navbar-nav ml-auto flex items-center">
+                        <div class="flex">
                             <!-- Authentication Links -->
                             @guest
                             <a class="nav-link"
@@ -49,36 +49,25 @@
                             @else
                             <theme-switcher></theme-switcher>
 
-                            <a class="flex items-center"
-                               href="#"
-                               role="button"
-                               data-toggle="dropdown"
-                               aria-haspopup="true"
-                               aria-expanded="false"
-                               v-pre>
-                                <img width="35"
-                                     src="{{ gravatar_url(auth()->user()->email) }}"
-                                     alt="{{ Auth::user()->name }}"
-                                     class="rounded-full mr-3">
-                                <span class="caret"></span>
-                            </a>
+                            <dropdown>
+                                <template v-slot:trigger>
+                                    <button class="flex items-center focus:outline-none">
+                                        <img width="35"
+                                             src="{{ gravatar_url(auth()->user()->email) }}"
+                                             alt="{{ Auth::user()->name }}"
+                                             class="rounded-full mr-3">
+                                        <span>{{ Auth::user()->name }}</span>
+                                    </button>
+                                </template>
 
-                            <div class="dropdown-menu dropdown-menu-right"
-                                 aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item"
-                                   href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form"
-                                      action="{{ route('logout') }}"
-                                      method="POST"
-                                      style="display: none;">
+                                <form method="POST"
+                                      action="/logout">
                                     @csrf
+                                    <button type="submit"
+                                            class="dropdown-menu-link">Logout</button>
                                 </form>
-                            </div>
+                            </dropdown>
+
                             @endguest
                         </div>
                     </div>

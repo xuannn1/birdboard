@@ -1,0 +1,7 @@
+.dropdown-menu-link {
+    @apply .leading-loose .px-4;
+
+    &:hover{
+        @apply .underline .bg-page;
+    }
+}
