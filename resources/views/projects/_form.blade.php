@@ -3,11 +3,11 @@
 
 <div class="field mb-6">
     <label for="title"
-           class="label text-sm mb-2 block">Title</label>
+           class="label mb-2 block">Title:</label>
 
     <div class="control">
         <input type="text"
-               class="input bg-transparent border border-grey-light rounded p-2 text-xs w-full"
+               class="input bg-transparent border border-grey rounded-lg p-2 text-xs w-full"
                name="title"
                placeholder="Title"
                required
@@ -17,10 +17,10 @@
 
 <div class="field mb-6">
     <label for="description"
-           class="label text-sm mb-2 block">Description</label>
+           class="label mb-2 block">Description:</label>
     <div class="control">
         <textarea name="description"
-                  class="textarea bg-transparent border border-grey-light rounded p-2 text-xs w-full"
+                  class="textarea bg-transparent border border-grey rounded-lg p-2 text-xs w-full"
                   placeholder="description"
                   required>
             {{ $project->description }}
@@ -28,12 +28,16 @@
     </div>
 </div>
 
-<div class="field">
-    <div class="control">
+<div class="flex">
+    <div class="flex flex-1 justify-end">
         <button type="submit"
-                class="button btn-blue">{{ $buttonText }}</button>
+                class="btn-blue mr-4">{{ $buttonText }}</button>
+
+    </div>
+    <div class="flex flex-1">
         <a href="{{ $project->path() }}"
-           class="px-2">Cancel</a>
+           class="btn-white">Cancel</a>
+
     </div>
 </div>
 

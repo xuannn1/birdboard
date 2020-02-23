@@ -1,7 +1,8 @@
 <div class="card"
      style="height:200px;">
     <h3 class="text-default font-font-normal text-xl mb-4 py-4 -ml-5 border-l-4 border-accent pl-4">
-        <a href="{{ $project->path() }}">{{ $project->title }}</a>
+        <a href="{{ $project->path() }}"
+           class="">{{ $project->title }}</a>
     </h3>
 
     <div class="text-default mb-6 flex-1">{{ \Str::limit($project->description, 300) }}</div>
@@ -13,7 +14,8 @@
               class="text-right">
             @method('DELETE')
             @csrf
-            <button type="submit">Delete</button>
+            <button type="submit"
+                    class="btn-white">Delete</button>
         </form>
     </footer>
     @endcan

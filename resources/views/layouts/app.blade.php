@@ -40,10 +40,10 @@
                         <div class="flex">
                             <!-- Authentication Links -->
                             @guest
-                            <a class="nav-link"
+                            <a class="tab-blue"
                                href="{{ route('login') }}">{{ __('Login') }}</a>
                             @if (Route::has('register'))
-                            <a class="nav-link"
+                            <a class="tab-blue"
                                href="{{ route('register') }}">{{ __('Register') }}</a>
                             @endif
                             @else
