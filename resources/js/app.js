@@ -9,9 +9,20 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import VModal from 'vue-js-modal'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+import {
+    faArrowUp
+} from '@fortawesome/free-solid-svg-icons';
+
+library.add(
+    faArrowUp,
+);
 
 Vue.use(VModal)
 
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -26,6 +37,7 @@ Vue.use(VModal)
 Vue.component('theme-switcher', require('./components/ThemeSwitcher.vue').default);
 Vue.component('new-project', require('./components/NewProject.vue').default);
 Vue.component('dropdown', require('./components/Dropdown.vue').default);
+Vue.component('scroll-link', require('./components/ScrollLink.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

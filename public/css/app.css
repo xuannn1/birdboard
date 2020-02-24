@@ -825,6 +825,10 @@ button {
   background-color: var(--header-background-color);
 }
 
+.bg-active {
+  background-color: rgba(233,233,233,0.6);
+}
+
 .hover\:bg-page:hover {
   background-color: var(--page-background-color);
 }
@@ -841,6 +845,10 @@ button {
   background-color: var(--header-background-color);
 }
 
+.hover\:bg-active:hover {
+  background-color: rgba(233,233,233,0.6);
+}
+
 .focus\:bg-page:focus {
   background-color: var(--page-background-color);
 }
@@ -855,6 +863,10 @@ button {
 
 .focus\:bg-header:focus {
   background-color: var(--header-background-color);
+}
+
+.focus\:bg-active:focus {
+  background-color: rgba(233,233,233,0.6);
 }
 
 .bg-bottom {
@@ -5208,6 +5220,10 @@ button {
     background-color: var(--header-background-color);
   }
 
+  .sm\:bg-active {
+    background-color: rgba(233,233,233,0.6);
+  }
+
   .sm\:hover\:bg-page:hover {
     background-color: var(--page-background-color);
   }
@@ -5224,6 +5240,10 @@ button {
     background-color: var(--header-background-color);
   }
 
+  .sm\:hover\:bg-active:hover {
+    background-color: rgba(233,233,233,0.6);
+  }
+
   .sm\:focus\:bg-page:focus {
     background-color: var(--page-background-color);
   }
@@ -5238,6 +5258,10 @@ button {
 
   .sm\:focus\:bg-header:focus {
     background-color: var(--header-background-color);
+  }
+
+  .sm\:focus\:bg-active:focus {
+    background-color: rgba(233,233,233,0.6);
   }
 
   .sm\:bg-bottom {
@@ -9592,6 +9616,10 @@ button {
     background-color: var(--header-background-color);
   }
 
+  .md\:bg-active {
+    background-color: rgba(233,233,233,0.6);
+  }
+
   .md\:hover\:bg-page:hover {
     background-color: var(--page-background-color);
   }
@@ -9608,6 +9636,10 @@ button {
     background-color: var(--header-background-color);
   }
 
+  .md\:hover\:bg-active:hover {
+    background-color: rgba(233,233,233,0.6);
+  }
+
   .md\:focus\:bg-page:focus {
     background-color: var(--page-background-color);
   }
@@ -9622,6 +9654,10 @@ button {
 
   .md\:focus\:bg-header:focus {
     background-color: var(--header-background-color);
+  }
+
+  .md\:focus\:bg-active:focus {
+    background-color: rgba(233,233,233,0.6);
   }
 
   .md\:bg-bottom {
@@ -13976,6 +14012,10 @@ button {
     background-color: var(--header-background-color);
   }
 
+  .lg\:bg-active {
+    background-color: rgba(233,233,233,0.6);
+  }
+
   .lg\:hover\:bg-page:hover {
     background-color: var(--page-background-color);
   }
@@ -13992,6 +14032,10 @@ button {
     background-color: var(--header-background-color);
   }
 
+  .lg\:hover\:bg-active:hover {
+    background-color: rgba(233,233,233,0.6);
+  }
+
   .lg\:focus\:bg-page:focus {
     background-color: var(--page-background-color);
   }
@@ -14006,6 +14050,10 @@ button {
 
   .lg\:focus\:bg-header:focus {
     background-color: var(--header-background-color);
+  }
+
+  .lg\:focus\:bg-active:focus {
+    background-color: rgba(233,233,233,0.6);
   }
 
   .lg\:bg-bottom {
@@ -18360,6 +18408,10 @@ button {
     background-color: var(--header-background-color);
   }
 
+  .xl\:bg-active {
+    background-color: rgba(233,233,233,0.6);
+  }
+
   .xl\:hover\:bg-page:hover {
     background-color: var(--page-background-color);
   }
@@ -18376,6 +18428,10 @@ button {
     background-color: var(--header-background-color);
   }
 
+  .xl\:hover\:bg-active:hover {
+    background-color: rgba(233,233,233,0.6);
+  }
+
   .xl\:focus\:bg-page:focus {
     background-color: var(--page-background-color);
   }
@@ -18390,6 +18446,10 @@ button {
 
   .xl\:focus\:bg-header:focus {
     background-color: var(--header-background-color);
+  }
+
+  .xl\:focus\:bg-active:focus {
+    background-color: rgba(233,233,233,0.6);
   }
 
   .xl\:bg-bottom {

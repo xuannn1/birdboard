@@ -51,6 +51,7 @@ module.exports = {
       card: 'var(--card-background-color)',
       button: 'var(--button-background-color)',
       header: 'var(--header-background-color)',
+      active: 'rgba(233,233,233,0.6)',
     },
     backgroundPosition: {
       bottom: 'bottom',

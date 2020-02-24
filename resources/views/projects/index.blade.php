@@ -11,6 +11,7 @@
 </header>
 
 <main class="lg:flex lg:flex-wrap -mx-3">
+
     @forelse ($projects as $project)
     <div class="lg:w-1/3 px-3 pb-6">
         @include('projects.card')
@@ -18,6 +19,16 @@
     @empty
     <div>No Project yet</div>
     @endforelse
+
+    <div id="bottom">111</div>
+
+    <scroll-link href="#app"
+                 class="fixed"
+                 style="right: 1.5rem; bottom: 4rem;">
+        <font-awesome-icon :icon="['fas', 'arrow-up']"
+                           class="text-2xl"></font-awesome-icon>
+    </scroll-link>
+
 </main>
 
 <new-project></new-project>
