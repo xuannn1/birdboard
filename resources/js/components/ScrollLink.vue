@@ -6,7 +6,7 @@
         :href="href"
         v-show="isDisplay"
         @click="action === 'add' ? add() : scroll()"
-        class="z-10 border border-accent text-accent rounded-full w-10 h-10 focus:outline-none hover:bg-active"
+        class="z-10 border border-accent text-accent rounded-full w-10 h-10 hover:bg-active"
         style="box-shadow: 0 2px 7px 0 #b0eaff;"
       >
         <slot></slot>
@@ -52,7 +52,7 @@ export default {
 <style>
 .fade-enter-active,
 .fade-leave-active {
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .fade-enter,

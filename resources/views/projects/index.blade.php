@@ -4,10 +4,16 @@
 <header class="flex items-center mb-3 py-3">
     <div class="w-full flex justify-between items-center">
         <h3 class="text-default tracking-wide">My Project</h3>
-        <a href="/projects/create"
-           class="btn-blue"
-           id="new-button"
-           @click.prevent="$modal.show('new-project')">New Project</a>
+
+        <div class="flex items-center">
+            <count-down until="March 1 2020 09:00:00"
+                        finish-text="The timer is finished"></count-down>
+
+            <a href="/projects/create"
+               class="btn-blue ml-6"
+               id="new-button"
+               @click.prevent="$modal.show('new-project')">New Project</a>
+        </div>
     </div>
 </header>
 

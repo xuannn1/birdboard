@@ -10,7 +10,7 @@
               v-model="form.title"
               type="text"
               id="title"
-              class="border p-2 text-xs block w-full rounded"
+              class="border p-2 text-xs block w-full rounded-lg"
               :class="form.errors.title ? 'border-red' : 'border-muted-light'"
               autofocus
             />
@@ -82,7 +82,11 @@ export default {
 
     cancel() {
       this.$modal.hide("new-project");
-      this.form = {};
+      this.form = new BirdboardForm({
+        title: "",
+        description: "",
+        tasks: [{ body: "" }]
+      });
     },
 
     async submit() {

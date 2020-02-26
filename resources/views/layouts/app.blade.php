@@ -51,7 +51,7 @@
 
                             <dropdown>
                                 <template v-slot:trigger>
-                                    <button class="flex items-center focus:outline-none">
+                                    <button class="flex items-center">
                                         <img width="35"
                                              src="{{ gravatar_url(auth()->user()->email) }}"
                                              alt="{{ Auth::user()->name }}"

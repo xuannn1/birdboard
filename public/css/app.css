@@ -745,6 +745,26 @@ button {
   padding-right: 2rem;
 }
 
+input:hover,
+textarea:hover {
+  outline: none;
+  border: #47cdff solid 1px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: #47cdff solid 1px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+button:focus {
+  outline: none;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

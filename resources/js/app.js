@@ -40,6 +40,7 @@ Vue.component('theme-switcher', require('./components/ThemeSwitcher.vue').defaul
 Vue.component('new-project', require('./components/NewProject.vue').default);
 Vue.component('dropdown', require('./components/Dropdown.vue').default);
 Vue.component('scroll-link', require('./components/ScrollLink.vue').default);
+Vue.component('count-down', require('./components/CountDown.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

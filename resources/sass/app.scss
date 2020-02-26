@@ -26,4 +26,24 @@ button {
     @apply .px-8;
 }
 
+input,
+textarea{
+    &:hover { 
+        outline:none; 
+        border: #47cdff solid 1px;
+        transition: .3s;
+    }
+    &:focus { 
+        outline:none; 
+        border: #47cdff solid 1px;
+        transition: .3s;
+    }
+}
+
+button {
+    &:focus {
+        outline: none;
+    }
+}
+
 @tailwind utilities;
