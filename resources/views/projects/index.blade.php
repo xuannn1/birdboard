@@ -6,6 +6,7 @@
         <h3 class="text-default tracking-wide">My Project</h3>
         <a href="/projects/create"
            class="btn-blue"
+           id="new-button"
            @click.prevent="$modal.show('new-project')">New Project</a>
     </div>
 </header>
@@ -20,12 +21,22 @@
     <div>No Project yet</div>
     @endforelse
 
-    <div id="bottom">111</div>
 
     <scroll-link href="#app"
+                 when-hidden="#new-button"
+                 action="scroll"
                  class="fixed"
                  style="right: 1.5rem; bottom: 4rem;">
         <font-awesome-icon :icon="['fas', 'arrow-up']"
+                           class="text-2xl"></font-awesome-icon>
+    </scroll-link>
+
+    <scroll-link href="#app"
+                 when-hidden="#new-button"
+                 action="add"
+                 class="fixed"
+                 style="right: 1.5rem; bottom: 7.5rem;">
+        <font-awesome-icon :icon="['fas', 'plus']"
                            class="text-2xl"></font-awesome-icon>
     </scroll-link>
 
