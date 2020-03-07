@@ -36,13 +36,14 @@
                           method="POST">
                         @method('PATCH')
                         @csrf
-                        <div class="flex">
+                        <div class="flex items-center">
                             <input type="text"
                                    name="body"
                                    value="{{ $task->body }}"
-                                   class="bg-card w-full {{$task->completed ? 'text-grey line-through' : ''}}">
+                                   class="bg-card w-full p-2 rounded-lg {{$task->completed ? 'text-grey line-through' : ''}}">
                             <input name="completed"
                                    type="checkbox"
+                                   class="ml-4"
                                    onchange="this.form.submit()"
                                    {{ $task->completed ? 'checked' : '' }}>
                         </div>
@@ -54,7 +55,7 @@
                           method="POST">
                         @csrf
                         <input placeholder="Begin adding tasks..."
-                               class="bg-card text-default w-full"
+                               class="bg-card text-default w-full p-2 rounded-lg"
                                name="body">
                     </form>
                 </div>
