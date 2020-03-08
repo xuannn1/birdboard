@@ -20,6 +20,13 @@ class UserTest extends TestCase
     }
 
     /** @test */
+    public function a_user_has_tasks()
+    {
+        $user = factory('App\User')->create();
+        $this->assertInstanceOf(Collection::class, $user->tasks);
+    }
+
+    /** @test */
     public function a_user_has_accessible_projects()
     {
         $user1 = $this->signIn();

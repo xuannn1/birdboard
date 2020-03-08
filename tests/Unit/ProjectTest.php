@@ -29,7 +29,7 @@ class ProjectTest extends TestCase
     {
         $project = factory('App\Project')->create();
 
-        $task = $project->addTask('Test task');
+        $task = $project->addTask(['body' => 'create task', 'owner_id' => $project->owner_id]);
         $this->assertCount(1, $project->tasks);
         $this->assertTrue($project->tasks->contains($task));
     }
@@ -39,7 +39,10 @@ class ProjectTest extends TestCase
     {
         $project = factory('App\Project')->create();
 
-        $tasks = $project->addTasks([['body' => 'Task 1'], ['body' => 'Task 2']]);
+        $tasks = $project->addTasks([
+            ['body' => 'Task 1', 'owner_id' => $project->owner_id],
+            ['body' => 'Task 2', 'owner_id' => $project->owner_id]
+        ]);
 
         $this->assertCount(2, $project->tasks);
         $this->assertTrue($project->tasks->contains($tasks[0]));

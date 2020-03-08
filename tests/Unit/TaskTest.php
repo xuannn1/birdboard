@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 use App\Task;
 use App\Project;
+use App\User;
 
 class TaskTest extends TestCase
 {
@@ -16,6 +17,13 @@ class TaskTest extends TestCase
     {
         $task = factory(Task::class)->create();
         $this->assertInstanceOf(Project::class, $task->project);
+    }
+
+    /** @test */
+    public function it_belongs_to_an_owner()
+    {
+        $task = factory(Task::class)->create();
+        $this->assertInstanceOf(User::class, $task->owner);
     }
 
     /** @test */

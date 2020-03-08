@@ -59,8 +59,8 @@ class ManageProjectsTest extends TestCase
 
         $attributes = factory(Project::class)->raw(['owner_id' => $user->id]);
         $attributes['tasks'] = [
-            ['body' => 'Task 1'],
-            ['body' => 'Task 2'],
+            ['body' => 'Task 1', 'owner_id' => $user->id],
+            ['body' => 'Task 2', 'owner_id' => $user->id],
         ];
 
         $this->post('/projects', $attributes);

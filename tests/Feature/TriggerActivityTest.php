@@ -48,7 +48,7 @@ class TriggerActivityTest extends TestCase
     public function creating_a_new_task()
     {
         $project = ProjectFactory::create();
-        $project->addTask('some task');
+        $project->addTask(['body' => 'some task', 'owner_id' => $project->owner_id]);
 
         $this->assertCount(2, $project->activity);
         tap($project->activity->last(), function ($activity) {

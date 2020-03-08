@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Project;
 use App\Task;
+use Symfony\Component\Mime\RawMessage;
 
 class ProjectTasksController extends Controller
 {
@@ -13,7 +14,11 @@ class ProjectTasksController extends Controller
         $this->authorize('update', $project);
 
         request()->validate(['body' => 'required']);
-        $project->addTask(request('body'));
+
+        $project->addTask([
+            'body' => request('body'),
+            'owner_id' => auth()->id()
+        ]);
 
         return redirect($project->path());
     }
@@ -29,5 +34,11 @@ class ProjectTasksController extends Controller
         request('completed') ? $task->complete() : $task->incomplete();
 
         return redirect($project->path());
+    }
+
+    public function destroy(Project $project, Task $task)
+    {
+        $this->authorize('update', $project);
+        $task->delete();
     }
 }

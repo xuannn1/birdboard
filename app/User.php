@@ -42,6 +42,11 @@ class User extends Authenticatable
         return $this->hasMany(Project::class, 'owner_id')->orderBy('updated_at', 'desc');
     }
 
+    public function tasks()
+    {
+        return $this->hasMany(Task::class, 'owner_id');
+    }
+
     public function accessibleProjects()
     {
         return Project::where('owner_id', $this->id)
