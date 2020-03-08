@@ -11,11 +11,13 @@
             @foreach ($project->members as $member)
             <img src="{{ gravatar_url($member->email) }}"
                  alt="{{ $member->name }}'s avatar'"
+                 title="{{ $member->name }}"
                  class="inline rounded-full w-10 mr-2">
             @endforeach
 
             <img src="{{ gravatar_url($project->owner->email) }}"
                  alt="{{ $project->owner->name }}'s avatar'"
+                 title="{{ $project->owner->name }}"
                  class="inline rounded-full w-10 mr-2">
 
             <a href="{{ $project->path() . '/edit' }}"
