@@ -48,6 +48,6 @@
 
 </main>
 
-<project-create></project-create>
+<project-create :user_id="{{ auth()->id() }}"></project-create>
 
 @endsection

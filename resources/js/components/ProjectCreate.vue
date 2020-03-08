@@ -75,19 +75,21 @@
 <script>
 import BirdboardForm from "../BirdboardForm";
 export default {
+  props: ["user_id"],
+
   data() {
     return {
       form: new BirdboardForm({
         title: "",
         description: "",
-        tasks: [{ body: "" }]
+        tasks: [{ body: "", owner_id: this.user_id }]
       })
     };
   },
 
   methods: {
     addTask() {
-      this.form.tasks.push({ body: "" });
+      this.form.tasks.push({ body: "", owner_id: this.user_id });
     },
 
     cancel() {

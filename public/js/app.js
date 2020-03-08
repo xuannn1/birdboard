@@ -11912,13 +11912,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["user_id"],
   data: function data() {
     return {
       form: new _BirdboardForm__WEBPACK_IMPORTED_MODULE_1__["default"]({
         title: "",
         description: "",
         tasks: [{
-          body: ""
+          body: "",
+          owner_id: this.user_id
         }]
       })
     };
@@ -11926,7 +11928,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   methods: {
     addTask: function addTask() {
       this.form.tasks.push({
-        body: ""
+        body: "",
+        owner_id: this.user_id
       });
     },
     cancel: function cancel() {
