@@ -7,7 +7,7 @@
     <div class="flex justify-center">
         <form method="POST"
               action="{{ route('login') }}"
-              class="card lg:w-1/2 w-10/12">
+              class="card lg:w-1/2 w-full">
             @csrf
 
             <div class="lg:flex lg:mb-4 mb-2">

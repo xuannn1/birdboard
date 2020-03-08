@@ -7,7 +7,7 @@
     <div class="flex justify-center">
         <form method="POST"
               action="{{ route('password.update') }}"
-              class="card lg:w-1/2 w-10/12">
+              class="card lg:w-1/2 w-full">
             @csrf
 
             <input type="hidden"
