@@ -12140,6 +12140,17 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    submit: function submit() {
+      if (this.action === "add") {
+        this.add();
+      }
+
+      if (this.action === "edit") {
+        this.edit();
+      }
+
+      this.scroll();
+    },
     scroll: function scroll() {
       document.querySelector(this.href).scrollIntoView({
         behavior: "smooth"
@@ -12147,6 +12158,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     add: function add() {
       this.$modal.show("project-create");
+    },
+    edit: function edit() {
+      this.$modal.show("project-edit");
     }
   }
 });
@@ -32488,11 +32502,7 @@ var render = function() {
               "z-10 border border-accent text-accent rounded-full w-10 h-10 hover:bg-active",
             staticStyle: { "box-shadow": "0 2px 7px 0 #b0eaff" },
             attrs: { type: "button", href: _vm.href },
-            on: {
-              click: function($event) {
-                _vm.action === "add" ? _vm.add() : _vm.scroll()
-              }
-            }
+            on: { click: _vm.submit }
           },
           [_vm._t("default")],
           2
@@ -44821,7 +44831,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faArrowUp"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faPlus"]);
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faArrowUp"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faPlus"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faPen"]);
 Vue.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_0___default.a);
 Vue.component('font-awesome-icon', _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"]);
 /**

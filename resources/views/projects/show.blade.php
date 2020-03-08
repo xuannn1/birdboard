@@ -20,6 +20,7 @@
 
             <a href="{{ $project->path() . '/edit' }}"
                class="btn-blue ml-6"
+               id="edit-button"
                @click.prevent="$modal.show('project-edit')">Edit Project</a>
         </div>
     </div>
@@ -87,6 +88,26 @@
             @include('projects.invite')
             @endcan
         </div>
+    </div>
+
+    <scroll-link href="#app"
+                 when-hidden="#edit-button"
+                 action="scroll"
+                 class="fixed"
+                 style="right: 1.5rem; bottom: 4rem;">
+        <font-awesome-icon :icon="['fas', 'arrow-up']"
+                           class="text-2xl"></font-awesome-icon>
+    </scroll-link>
+
+    <scroll-link href="#app"
+                 when-hidden="#edit-button"
+                 action="edit"
+                 class="fixed"
+                 style="right: 1.5rem; bottom: 7.5rem;">
+        <font-awesome-icon :icon="['fas', 'pen']"
+                           class="text-2xl"></font-awesome-icon>
+    </scroll-link>
+
 </main>
 
 <project-edit></project-edit>

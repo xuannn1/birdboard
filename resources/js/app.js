@@ -14,12 +14,14 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import {
     faArrowUp,
-    faPlus
+    faPlus,
+    faPen
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
     faArrowUp,
-    faPlus
+    faPlus,
+    faPen
 );
 
 Vue.use(VModal)

@@ -5,7 +5,7 @@
         type="button"
         :href="href"
         v-show="isDisplay"
-        @click="action === 'add' ? add() : scroll()"
+        @click="submit"
         class="z-10 border border-accent text-accent rounded-full w-10 h-10 hover:bg-active"
         style="box-shadow: 0 2px 7px 0 #b0eaff;"
       >
@@ -38,12 +38,26 @@ export default {
   },
 
   methods: {
+    submit() {
+      if (this.action === "add") {
+        this.add();
+      }
+      if (this.action === "edit") {
+        this.edit();
+      }
+      this.scroll();
+    },
+
     scroll() {
       document.querySelector(this.href).scrollIntoView({ behavior: "smooth" });
     },
 
     add() {
       this.$modal.show("project-create");
+    },
+
+    edit() {
+      this.$modal.show("project-edit");
     }
   }
 };
