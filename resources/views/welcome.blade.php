@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600"
           rel="stylesheet">
 
+    <link href="{{ asset('css/app.css') }}"
+          rel="stylesheet">
+
     <!-- Styles -->
     <style>
         html,
@@ -85,9 +88,10 @@
         @endif
 
         <div class="content">
-            <div class="title m-b-md">
+            <a class="title m-b-md"
+               href="{{ route('register') }}">
                 {{ config('app.name') }}
-            </div>
+            </a>
 
         </div>
     </div>
