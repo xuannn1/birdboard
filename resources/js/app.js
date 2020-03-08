@@ -37,7 +37,8 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('theme-switcher', require('./components/ThemeSwitcher.vue').default);
-Vue.component('new-project', require('./components/NewProject.vue').default);
+Vue.component('project-create', require('./components/ProjectCreate.vue').default);
+Vue.component('project-edit', require('./components/ProjectEdit.vue').default);
 Vue.component('dropdown', require('./components/Dropdown.vue').default);
 Vue.component('scroll-link', require('./components/ScrollLink.vue').default);
 Vue.component('count-down', require('./components/CountDown.vue').default);

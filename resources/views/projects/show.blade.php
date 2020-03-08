@@ -19,7 +19,8 @@
                  class="inline rounded-full w-10 mr-2">
 
             <a href="{{ $project->path() . '/edit' }}"
-               class="btn-blue ml-6">Edit Project</a>
+               class="btn-blue ml-6"
+               @click.prevent="$modal.show('project-edit')">Edit Project</a>
         </div>
     </div>
 </header>
@@ -87,4 +88,7 @@
             @endcan
         </div>
 </main>
+
+<project-edit></project-edit>
+
 @endsection

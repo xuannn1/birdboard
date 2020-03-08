@@ -1,10 +1,15 @@
 <template>
-  <modal name="new-project" classes="p-10 bg-card rounded-lg" height="auto">
+  <modal
+    name="project-create"
+    classes="p-8 lg:p-10 bg-card rounded-lg"
+    height="auto"
+    :adaptive="true"
+  >
     <form @submit.prevent="submit">
-      <h1 class="font-normal mb-16 text-center text-2xl">Let's Start Something New</h1>
-      <div class="flex">
-        <div class="flex-1 mr-4">
-          <div class="mb-4">
+      <h1 class="font-normal mb-6 text-center text-2xl">Let's Start Something New</h1>
+      <div class="lg:flex mb-2">
+        <div class="flex-1 lg:mr-4">
+          <div class="lg:mb-4 mb-2">
             <label for="title" class="text-sm block mb-2">Title</label>
             <input
               v-model="form.title"
@@ -21,12 +26,12 @@
             ></span>
           </div>
 
-          <div class="mb-4">
+          <div class="lg:mb-4 mb-2">
             <label for="description" class="text-sm block mb-2">Description</label>
             <textarea
               v-model="form.description"
               id="description"
-              class="border p-2 text-xs block w-full rounded"
+              class="border p-2 text-xs block w-full rounded-lg"
               :class="form.errors.description ? 'border-red' : 'border-muted-light'"
               rows="7"
             ></textarea>
@@ -37,7 +42,7 @@
             ></span>
           </div>
         </div>
-        <div class="flex-1 ml-4">
+        <div class="flex-1 lg:ml-4">
           <div class="mb-4">
             <label class="text-sm block mb-2">Need Some Tasks?</label>
             <input
@@ -45,12 +50,17 @@
               :key="task.index"
               v-model="task.body"
               type="text"
-              class="border border-muted-light mb-2 p-2 text-xs block w-full rounded"
+              class="border border-muted-light p-2 mb-2 text-xs block w-full rounded-lg"
               placeholder="Task 1"
             />
           </div>
 
-          <button type="button" @click="addTask()">Add New Task Field</button>
+          <button type="button" class="flex w-full my-4 text-accent" @click="addTask()">
+            <div class="border p-2 w-6 h-6 rounded-full inline-flex items-center justify-center">
+              <font-awesome-icon :icon="['fas', 'plus']"></font-awesome-icon>
+            </div>
+            <span class="ml-2">Add New Task Field</span>
+          </button>
         </div>
       </div>
 
@@ -81,7 +91,7 @@ export default {
     },
 
     cancel() {
-      this.$modal.hide("new-project");
+      this.$modal.hide("project-create");
       this.form = new BirdboardForm({
         title: "",
         description: "",
@@ -96,7 +106,7 @@ export default {
         delete this.form.originalData.tasks;
       }
 
-      this.form.submit("/projects").then(res => (location = res.data.message));
+      this.form.post("/projects").then(res => (location = res.data.message));
     }
   }
 };

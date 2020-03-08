@@ -1,0 +1,8 @@
+
+.form-menu-label {
+    @apply .block .mb-2 .text-xl .mr-6 .flex-1 .justify-end;
+}
+
+.form-menu-input {
+    @apply .w-full .rounded-lg .border .border-muted-light .p-2;
+}

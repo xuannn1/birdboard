@@ -43,7 +43,7 @@ export default {
     },
 
     add() {
-      this.$modal.show("new-project");
+      this.$modal.show("project-create");
     }
   }
 };

@@ -7,21 +7,21 @@
     <div class="flex justify-center">
         <form method="POST"
               action="{{ route('password.update') }}"
-              class="card w-1/2">
+              class="card lg:w-1/2 w-10/12">
             @csrf
 
             <input type="hidden"
                    name="token"
                    value="{{ $token }}">
 
-            <div class="flex mb-4">
+            <div class="lg:flex mb-4">
                 <label for="email"
-                       class="text-xl mr-6 flex-1 flex justify-end items-center">{{ __('E-Mail Address') }}</label>
+                       class="lg:mb-0 lg:flex form-menu-label">{{ __('E-Mail Address') }}</label>
 
                 <div class="flex-1">
                     <input id="email"
                            type="email"
-                           class="rounded-lg border border-muted-light p-2 @error('email') is-invalid @enderror"
+                           class="lg:w-2/3 form-menu-input @error('email') is-invalid @enderror"
                            name="email"
                            value="{{ $email ?? old('email') }}"
                            required

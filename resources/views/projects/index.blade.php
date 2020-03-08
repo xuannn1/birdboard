@@ -6,13 +6,13 @@
         <h3 class="text-default tracking-wide">My Project</h3>
 
         <div class="flex items-center">
-            <count-down until="March 1 2020 09:00:00"
-                        finish-text="The timer is finished"></count-down>
+            {{-- <count-down until="March 15 2020 09:00:00"
+                        finish-text="The timer is finished"></count-down> --}}
 
             <a href="/projects/create"
                class="btn-blue ml-6"
                id="new-button"
-               @click.prevent="$modal.show('new-project')">New Project</a>
+               @click.prevent="$modal.show('project-create')">New Project</a>
         </div>
     </div>
 </header>
@@ -48,6 +48,6 @@
 
 </main>
 
-<new-project></new-project>
+<project-create></project-create>
 
 @endsection

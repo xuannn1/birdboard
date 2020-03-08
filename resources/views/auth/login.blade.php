@@ -7,17 +7,18 @@
     <div class="flex justify-center">
         <form method="POST"
               action="{{ route('login') }}"
-              class="card w-1/2">
+              class="card lg:w-1/2 w-10/12">
             @csrf
 
-            <div class="flex mb-4">
+            <div class="lg:flex lg:mb-4 mb-2">
                 <label for="email"
-                       class="text-xl mr-6 flex-1 flex justify-end items-center">E-Mail Address:</label>
+                       class="lg:mb-0 lg:flex form-menu-label">E-Mail
+                    Address:</label>
 
                 <div class="flex-1">
                     <input id="email"
                            type="email"
-                           class="rounded-lg border border-muted-light p-2 @error('email') is-invalid @enderror"
+                           class="lg:w-2/3 form-menu-input @error('email') is-invalid @enderror"
                            name="email"
                            value="{{ old('email') }}"
                            required
@@ -33,14 +34,14 @@
                 </div>
             </div>
 
-            <div class="flex mb-2">
+            <div class="lg:flex mb-2">
                 <label for="password"
-                       class="text-xl mr-6 flex-1 flex justify-end items-center">Password:</label>
+                       class="lg:mb-0 lg:flex form-menu-label">Password:</label>
 
                 <div class="flex-1 col-md-6">
                     <input id="password"
                            type="password"
-                           class="rounded-lg border border-muted-light p-2 @error('password') is-invalid @enderror"
+                           class="lg:w-2/3 form-menu-input @error('password') is-invalid @enderror"
                            name="password"
                            required
                            autocomplete="current-password">
@@ -54,7 +55,7 @@
                 </div>
             </div>
 
-            <div class="flex mb-4 justify-end">
+            <div class="lg:flex mb-4 justify-end">
                 <div class="mr-20">
                     <div class="form-check">
                         <input class="form-check-input"
@@ -80,15 +81,21 @@
                 </div>
 
                 <div class="flex flex-1">
+                    <a class=" btn-white"
+                       href="{{ route('register') }}">
+                        {{ __('Register') }}
+                    </a>
+                </div>
+                {{-- <div class="flex flex-1">
                     @if (Route::has('password.request'))
                     <a class="btn-white"
                        href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
-                    </a>
-                    @endif
-                </div>
-            </div>
-        </form>
+                {{ __('Forgot Your Password?') }}
+                </a>
+                @endif
+            </div> --}}
     </div>
+    </form>
+</div>
 </div>
 @endsection

@@ -7,17 +7,17 @@
     <div class="flex justify-center">
         <form method="POST"
               action="{{ route('register') }}"
-              class="card w-1/2">
+              class="card lg:w-1/2 w-10/12">
             @csrf
 
-            <div class="flex mb-4">
+            <div class="lg:flex lg:mb-4 mb-2">
                 <label for="name"
-                       class="text-xl mr-6 flex-1 flex justify-end items-center">Name:</label>
+                       class="lg:mb-0 lg:flex form-menu-label">Name:</label>
 
                 <div class="flex-1">
                     <input id="name"
                            type="text"
-                           class="rounded-lg border border-muted-light p-2 @error('name') is-invalid @enderror"
+                           class="lg:w-2/3 form-menu-input @error('name') is-invalid @enderror"
                            name="name"
                            value="{{ old('name') }}"
                            required
@@ -33,14 +33,14 @@
                 </div>
             </div>
 
-            <div class="flex mb-4">
+            <div class="lg:flex lg:mb-4 mb-2">
                 <label for="email"
-                       class="text-xl mr-6 flex-1 flex justify-end items-center">E-Mail Address:</label>
+                       class="lg:mb-0 lg:flex form-menu-label">E-Mail Address:</label>
 
                 <div class="flex-1">
                     <input id="email"
                            type="email"
-                           class="rounded-lg border border-muted-light p-2 @error('email') is-invalid @enderror"
+                           class="lg:w-2/3 form-menu-input @error('email') is-invalid @enderror"
                            name="email"
                            value="{{ old('email') }}"
                            required
@@ -55,14 +55,14 @@
                 </div>
             </div>
 
-            <div class="flex mb-4">
+            <div class="lg:flex lg:mb-4 mb-2">
                 <label for="password"
-                       class="text-xl mr-6 flex-1 flex justify-end items-center">Password:</label>
+                       class="lg:mb-0 lg:flex form-menu-label">Password:</label>
 
                 <div class="flex-1">
                     <input id="password"
                            type="password"
-                           class="rounded-lg border border-muted-light p-2 @error('password') is-invalid @enderror"
+                           class="lg:w-2/3 form-menu-input @error('password') is-invalid @enderror"
                            name="password"
                            required
                            autocomplete="new-password">
@@ -76,14 +76,14 @@
                 </div>
             </div>
 
-            <div class="flex mb-4">
+            <div class="lg:flex mb-4">
                 <label for="password-confirm"
-                       class="text-xl mr-6 flex-1 flex justify-end items-center">Confirm Password:</label>
+                       class="lg:mb-0 lg:flex form-menu-label">Confirm Password:</label>
 
                 <div class="flex-1">
                     <input id="password-confirm"
                            type="password"
-                           class="rounded-lg border border-muted-light p-2"
+                           class="lg:w-2/3 form-menu-input"
                            name="password_confirmation"
                            required
                            autocomplete="new-password">
@@ -100,7 +100,7 @@
                 <div class="flex flex-1">
                     <a href="{{ route('login') }}"
                        class="btn-white">
-                        Return To Login
+                        To Login
                     </a>
                 </div>
             </div>

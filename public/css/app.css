@@ -735,6 +735,25 @@ video {
   text-transform: uppercase;
 }
 
+.form-menu-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  margin-right: 1.5rem;
+  -webkit-box-flex: 1;
+          flex: 1 1 0%;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+}
+
+.form-menu-input {
+  width: 100%;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: var(--text-muted-light-color);
+  padding: 0.5rem;
+}
+
 body,
 button {
   color: var(--text-default-color);

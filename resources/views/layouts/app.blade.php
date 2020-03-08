@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1">
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token"
@@ -26,10 +26,11 @@
 </head>
 
 <body class="bg-page theme-light">
-    <div id="app">
+    <div id="app"
+         class="">
         <nav class="bg-header">
             <div class="container mx-auto">
-                <div class="flex justify-between items-center py-2">
+                <div class="flex justify-between items-center py-2 mx-4 lg:mx-0">
                     <a class="text-default text-2xl font-medium tracking-wider"
                        href="{{ url('/projects') }}">
                         {{ config('app.name') }}
@@ -77,7 +78,9 @@
         </nav>
 
         <main class="container py-4 mx-auto">
-            @yield('content')
+            <div class="mx-4 lg:mx-0">
+                @yield('content')
+            </div>
         </main>
     </div>
 </body>
