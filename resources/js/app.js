@@ -45,6 +45,7 @@ Vue.component('dropdown', require('./components/Dropdown.vue').default);
 Vue.component('scroll-link', require('./components/ScrollLink.vue').default);
 Vue.component('count-down', require('./components/CountDown.vue').default);
 Vue.component('tasks', require('./components/Tasks.vue').default);
+Vue.component('activity-card', require('./components/ActivityCard.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
