@@ -34,62 +34,51 @@
                 <h3 class="text-lg text-default tracking-wide mb-3">Tasks</h3>
 
                 {{-- Tasks --}}
-                @foreach ($project->tasks as $task)
-                <div class="card mb-4">
-                    <form action="{{ $task->path() }}"
-                          method="POST">
-                        @method('PATCH')
-                        @csrf
-                        <div class="flex items-center">
-                            <input type="text"
-                                   name="body"
-                                   value="{{ $task->body }}"
-                                   class="bg-card w-full p-2 rounded-lg {{$task->completed ? 'text-grey line-through' : ''}}">
-                            <input name="completed"
-                                   type="checkbox"
-                                   class="ml-4"
-                                   onchange="this.form.submit()"
-                                   {{ $task->completed ? 'checked' : '' }}>
-                        </div>
-                    </form>
-                </div>
-                @endforeach
-                <div class="card mb-4">
-                    <form action="{{ $project->path() . '/tasks' }}"
-                          method="POST">
-                        @csrf
-                        <input placeholder="Begin adding tasks..."
-                               class="bg-card text-default w-full p-2 rounded-lg"
-                               name="body">
-                    </form>
-                </div>
-            </div>
-            <div>
-                <h3 class="text-lg text-default tracking-wide mb-3">General Notes</h3>
-
-                <form action="{{ $project->path() }}"
-                      method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <textarea name="notes"
-                              class="card w-full mb-4"
-                              style="min-height: 200px;"
-                              placeholder="anything special that you want to make a note of?">{{ $project->notes }}</textarea>
-                    <button type="submit"
-                            class="btn-blue">Save</button>
+                <tasks path="{{ $project->path() }}"></tasks>
+                {{-- @foreach ($project->tasks as $task)
+                <task body="{{ $task->body }}"
+                owner_id="{{ $task->owner_id }}"
+                path="{{ $task->path() }}"
+                completed="{{ $task->completed }}"
+                @changed="{{ $task->completed = !$task->completed }}"></task>
+                @endforeach --}}
+                {{-- <div class="card mb-4">
+                <form action="{{ $project->path() . '/tasks' }}"
+                method="POST">
+                @csrf
+                <input placeholder="Begin adding tasks..."
+                       class="bg-card text-default w-full p-2 rounded-lg"
+                       name="body">
                 </form>
-                @include('errors')
-            </div>
+            </div> --}}
+            {{-- <task-create path={{ $project->path() . '/tasks' }}></task-create> --}}
         </div>
-        <div class="lg:w-1/4 px-3 pt-10">
-            @include('projects.card')
+        <div>
+            <h3 class="text-lg text-default tracking-wide mb-3">General Notes</h3>
 
-            @include('projects.activity.card')
-
-            @can('manage', $project)
-            @include('projects.invite')
-            @endcan
+            <form action="{{ $project->path() }}"
+                  method="POST">
+                @csrf
+                @method('PATCH')
+                <textarea name="notes"
+                          class="card w-full mb-4"
+                          style="min-height: 200px;"
+                          placeholder="anything special that you want to make a note of?">{{ $project->notes }}</textarea>
+                <button type="submit"
+                        class="btn-blue">Save</button>
+            </form>
+            @include('errors')
         </div>
+    </div>
+    <div class="lg:w-1/4 px-3 pt-10">
+        @include('projects.card')
+
+        @include('projects.activity.card')
+
+        @can('manage', $project)
+        @include('projects.invite')
+        @endcan
+    </div>
     </div>
 
     <scroll-link href="#app"

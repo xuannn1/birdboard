@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('projects', 'ProjectsController');
 
+    Route::get('/projects/{project}/tasks', 'ProjectTasksController@index');
     Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
     Route::patch('/projects/{project}/tasks/{task}', 'ProjectTasksController@update');
     Route::delete('/projects/{project}/tasks/{task}', 'ProjectTasksController@destroy');

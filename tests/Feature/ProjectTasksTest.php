@@ -188,4 +188,18 @@ class ProjectTasksTest extends TestCase
             ->delete($task2->path());
         $this->assertDatabaseMissing('tasks', ['id' => $task2->id]);
     }
+
+    /** @test */
+    public function the_member_of_a_project_can_get_all_tasks()
+    {
+        $this->withoutExceptionHandling();
+        $project = ProjectFactory::withTasks(2)->create();
+        $task1 = $project->tasks[0];
+        $task2 = $project->tasks[1];
+
+        // 项目的创建者可以删除task
+        $this->actingAs($project->owner)
+            ->get($project->path() . '/tasks')
+            ->assertStatus(200);
+    }
 }

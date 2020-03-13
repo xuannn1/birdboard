@@ -9,16 +9,28 @@ use Symfony\Component\Mime\RawMessage;
 
 class ProjectTasksController extends Controller
 {
+    public function index(Project $project)
+    {
+        $this->authorize('update', $project);
+        if (request()->wantsJson()) {
+            return $project->tasks;
+        }
+    }
+
     public function store(Project $project)
     {
         $this->authorize('update', $project);
 
         request()->validate(['body' => 'required']);
 
-        $project->addTask([
+        $task = $project->addTask([
             'body' => request('body'),
             'owner_id' => auth()->id()
         ]);
+
+        if (request()->wantsJson()) {
+            return $task;
+        }
 
         return redirect($project->path());
     }
